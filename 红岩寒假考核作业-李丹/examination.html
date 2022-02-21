@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examination</title>
+    <link rel="stylesheet" href="./ss/songlistdetails.css">
+    <link rel="stylesheet" href="./ss/slideshow.css">
+    <link rel="stylesheet" href="./icontfont/iconfont.css">
+    <link rel="stylesheet" href="./icontfont1/iconfont.css">
+    <link rel="stylesheet" href="./iconfont2/iconfont.css">
+    <link rel="stylesheet" href="./iconfont3/iconfont.css">
+    <link rel="stylesheet" href="./ss/bottom.css">
+    <link rel="stylesheet" href="./iconfont-h/iconfont.css">
+    <style>
+        .iconfont-a#logo {
+            font-size: 50px;
+            /* display: inline; */
+            color: aliceblue;
+            float: left;
+            line-height: 60.66px;
+        }
+
+        .iconfont-b#position {
+            position: absolute;
+            z-index: 1;
+            color: aliceblue;
+            font-size: 15px;
+            clear: both;
+            left: 72px;
+            top: 6px;
+        }
+
+        .iconfont#micro {
+            float: left;
+            margin-top: 5px;
+            margin-left: 5px;
+            color: aliceblue;
+        }
+
+        .iconfont-a#login {
+            float: left;
+            color: aliceblue;
+            margin-top: 15px;
+            font-size: 25px;
+            background-color: rgb(190, 186, 186);
+            border-radius: 50%;
+
+
+        }
+
+        /*  */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .all {
+            width: 1022px;
+            height: 670px;
+
+        }
+
+        .head {
+            width: 1022px;
+            height: 60.66px;
+            background-color: rgb(236, 65, 65);
+            /* padding-top: 14px; */
+        }
+
+        .middlepart {
+            width: 1022px;
+            height: 535.34px;
+
+        }
+
+        .bottom {
+            width: 1022px;
+            height: 74px;
+            background-color: rgb(241,243,244);
+            position: relative;
+        }
+
+        .leftpart {
+            width: 200px;
+            height: 535.34px;
+            float: left;
+            overflow-y: scroll;
+        }
+
+        /*定义滚动条高宽及背景
+        高宽分别对应横竖滚动条的尺寸*/
+
+        .leftpart::-webkit-scrollbar,
+        .down1::-webkit-scrollbar,
+        .down3::-webkit-scrollbar {
+
+            width: 6px;
+            background-color: gray;
+        }
+
+        .leftpart::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        .leftpart:hover::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        /* 定义滚动条轨道
+        内阴影+圆角*/
+        .leftpart::-webkit-scrollbar-track,
+        .down1::-webkit-scrollbar-track,
+        .down3::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        /* 定义滑块
+        内阴影+圆角*/
+        .leftpart::-webkit-scrollbar-thumb,
+        .down1::-webkit-scrollbar-thumb,
+        .down3::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+
+        }
+
+        .rightpart {
+            width: 822px;
+            height: 535.34px;
+
+            float: left;
+        }
+
+        .fixed {
+            width: 170px;
+            height: 37.33px;
+            margin-left: 12px;
+            margin-bottom: 4px;
+            padding-left: 10px;
+            padding-top: 13px;
+        }
+
+        .active {
+            width: 158px;
+            height: 40px;
+            padding-left: 22px;
+            color: gray;
+        }
+
+        #s2 {
+            width: 158px;
+            height: 40px;
+            padding-left: 22px;
+            color: gray;
+        }
+
+        div.up {
+            width: 822px;
+            height: 54px;
+            /* display: none; */
+            z-index: 1;
+            position: relative;
+            background-color: white;
+        }
+
+        .up-in {
+            width: 82.2px;
+            height: 36px;
+            float: left;
+            padding-top: 18px;
+            list-style: none;
+            text-align: center;
+        }
+
+        .down1 {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 822px;
+            height: 481.34px;
+            overflow-y: scroll;
+            /* display: none; */
+            position: absolute;
+            z-index: 1;
+            background-color: white;
+        }
+
+        .slideshow {
+            width: 760px;
+            height: 250px;
+            /* background-color: cornflowerblue; */
+            flex-shrink: 0;
+        }
+
+        .songlist {
+            width: 763px;
+            height: 457px;
+            /* background-color: crimson; */
+            flex-shrink: 0;
+        }
+
+        .down3 {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 822px;
+            height: 481.34px;
+            overflow-y: scroll;
+            /* display: none; */
+            position: absolute;
+            z-index: 0;
+            background-color: white;
+        }
+
+        .excellent {
+            width: 763px;
+            height: 203px;
+            background-color: aliceblue;
+            flex-shrink: 0;
+            background: url("./bac.png");
+            background-size: cover;
+            /*适应容器*/
+        }
+
+        .nav {
+            width: 763px;
+            height: 30px;
+            flex-shrink: 0;
+
+        }
+
+        .songlist-all {
+            width: 763px;
+            height: 251px;
+
+            flex-shrink: 0;
+            position: relative;
+            display: flex;
+        }
+
+        .songlist-all>div>i>span:nth-of-type(1) {
+            margin-bottom: 5px;
+        }
+
+        .search {
+            width: 269px;
+            height: 32.66px;
+            position: relative;
+            float: left;
+            margin-top: 14px;
+            margin-left: 50px;
+        }
+
+        /* .head::before{
+            content: "";
+            display: table;
+        } */
+        a {
+            text-decoration: none;
+        }
+
+        #search {
+            caret-color: rgb(235, 229, 229);
+            outline-style: none;
+            border: 0px;
+            border-radius: 15px;
+            padding: 6px 6px;
+            margin-left: 5px;
+            background-color: none;
+            padding-left: 30px;
+            float: left;
+            width: 120px;
+            background-color: rgba(192, 54, 54, 0.5);
+        }
+
+        .things {
+            float: right;
+            width: 430px;
+            height: 32px;
+        }
+
+        .login {
+            float: left;
+        }
+
+        .songlist-head {
+            height: 33px;
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .songlist-one {
+            width: 138px;
+            height: 183px;
+            /* justify-content: space-between; */
+            /* background-color: rgb(56, 130, 194); */
+            float: left;
+            margin-bottom: 29px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .songlist-one:not(:nth-child(6), :nth-child(11)) {
+            margin-right: 18.25px;
+
+
+        }
+
+        .songlist-one-img {
+            width: 100%;
+            height: 138px;
+
+        }
+
+        .songlist-one-img#blur {
+            background-repeat: no-repeat;
+            background-size: cover;
+            /*适应容器*/
+            background-position: 50%;
+            /*调整图片位置*/
+            filter: blur(20px);
+            /*高斯模糊*/
+            width: 158;
+
+        }
+
+        .hh {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: aliceblue;
+        }
+
+        .aa {
+            color: transparent;
+            position: absolute;
+            left: 100px;
+            bottom: 60px;
+            font-size: 30px;
+        }
+
+        .songlist-one-img:hover~.aa,
+        #calendar:hover~.aa {
+            color: rgb(236, 65, 65);
+            z-index: 200;
+        }
+
+
+        .excellentsonglist {
+            /*img  */
+            width: 156px;
+            height: 156px;
+            margin-top: 7px;
+            margin-left: 7px;
+            float: left;
+            margin-right: 7px;
+        }
+
+        .excellentBut {
+            /*button*/
+            width: 100px;
+            height: 30px;
+            background-color: transparent;
+            margin-top: 30px;
+            border-radius: 15px;
+            border: 1px solid rgb(215, 161, 92);
+            font-size: 12px;
+            color: rgb(215, 161, 92);
+        }
+
+        /* span.excellentExpression{
+            font-size: 10px;
+        } */
+
+        .excellentExpression:nth-child(2) {
+            display: block;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .excellentExpression:nth-child(3) {
+            font-size: 10px;
+        }
+
+        .excellentbox {
+            margin-top: 16.5px;
+            width: 762px;
+            height: 170px;
+
+
+        }
+
+        .notImg {
+            float: left;
+
+        }
+
+        #huangguan {
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 28px;
+            margin-left: 10px;
+            color: rgb(215, 161, 92);
+            margin-right: 5px;
+        }
+
+        .songAllBtn {
+            width: 90px;
+            height: 25px;
+            background-color: transparent;
+            border-radius: 15px;
+            border: 0.3px solid black;
+            font-size: 15px;
+            font-weight: 100;
+            line-height: 25px;
+            padding-left: 10px;
+            display: inline;
+        }
+
+        .category {
+            margin-right: 10px;
+            float: right;
+            font-size: 5px;
+            line-height: 30px;
+        }
+
+        .songlist-all-one {
+            width: 178px;
+            height: 178px;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .songlist-all-one:not(:nth-child(7)) {
+            margin-right: 17px;
+        }
+
+        .hh1:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 105px;
+            width: 100px;
+        }
+
+        .hh1:nth-child(4) {
+            position: absolute;
+            top: 0;
+            left: 300px;
+            width: 100px;
+        }
+
+        .hh1:nth-child(6) {
+            position: absolute;
+            top: 0;
+            left: 495px;
+            width: 100px;
+        }
+
+        .hh1:nth-child(8) {
+            position: absolute;
+            top: 0;
+            right: -25px;
+            width: 100px;
+        }
+
+        .iconfont-a#userId {
+            position: absolute;
+            top: 159px;
+            left: -100px;
+
+        }
+
+        .description {
+            position: absolute;
+            width: 178px;
+            top: 20px;
+            left: 0px;
+        }
+
+        .line {
+            width: 1px;
+            height: 535.34px;
+            position: absolute;
+            left: 200px;
+            background-color: rgb(202, 198, 198);
+        }
+
+        .songlist-one>span {
+            font-size: 10px;
+        }
+
+        #calendar {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            font-size: 80px;
+            color: aliceblue;
+        }
+
+        /* .up>.up-in:nth-of-type(1) {
+            background-color: blueviolet;
+        }
+
+        .up>.up-in:nth-of-type(3) {
+            background-color: burlywood;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="head">
+            <i class="iconfont-a" id="logo">&#xe6b9;</i>
+            <div class="search">
+                <i class="iconfont-b" id="position">&#xe651;</i>
+                <a href="" style="float: left;" id="toLeft">
+                    <i class="iconfont-a" style="font-size: 30px;color: aliceblue;">&#xe66f;</i>
+                </a>
+                <a href="" style="float: left;" id="toRight">
+                    <i class="iconfont-a" style="font-size: 30px;color: aliceblue;">&#xe670;</i>
+                </a>
+                <input type="text" id="search">
+                <i class="iconfont" id="micro">&#xe600;</i>
+            </div>
+            <div class="things">
+                <div class="login">
+                    <i class="iconfont-a" id="login">&#xe621;</i>
+                    <div
+                        style="float:left;height: 32px;color:rgb(168, 165, 165);margin-top: 19px;margin-left:10px;font-size:12px;">
+                        未登录</div>
+                    <i class="iconfont"
+                        style="float:left;font-size: 5px;margin-top:21px;margin-left: 5px;color: rgb(251,217,217);">&#xe618;</i>
+                </div>
+                <img src="./vip.png" style="width: 48px;margin-top: 22px;margin-left: 5px;float: left;">
+                <i class="iconfont"
+                    style="margin-left: 20px;color: rgb(251,217,217);float: left;margin-top: 20px;">&#xe8c7;</i>
+                <i class="iconfont"
+                    style="color: rgb(251,217,217);margin-left:15px;float: left;margin-top: 20px;">&#xe61f;</i>
+                <i class="iconfont"
+                    style="color: rgb(251,217,217);margin-left:15px;float: left;margin-top: 20px;">&#xe6eb;</i>
+                <div
+                    style="width: 0.5px;height: 15px;background-color: rgb(241, 237, 237);float: left;margin-top: 20px;margin-left: 20px;">
+                </div>
+                <i class="iconfont"
+                    style="color: rgb(251,217,217);margin-top: 20px;margin-left: 15px;float: left;">&#xe69e;</i>
+                <i class="iconfont"
+                    style="color: rgb(251,217,217);margin-top: 20px;margin-left: 15px;float: left;">&#xe650;</i>
+                <i class="iconfont"
+                    style="color: rgb(251,217,217);margin-top: 20px;margin-left: 15px;float: left;font-size: 18px;">&#xe66b;</i>
+                <i class="iconfont"
+                    style="color: rgb(251,217,217);margin-top: 20px;margin-left: 15px;float: left;font-size: 20px;">&#xe609;</i>
+            </div>
+        </div>
+        <div class="middlepart">
+            <div class="leftpart">
+                <div class="fixed" style="font-weight: bold;">发现音乐</div>
+                <div class="fixed">播客</div>
+                <div class="fixed">视频</div>
+                <div class="fixed">关注</div>
+                <div class="fixed">直播</div>
+                <div class="fixed">私人FM</div>
+                <div id="s2">我的音乐</div>
+                <div class="fixed">本地与下载</div>
+                <div class="fixed">最近播放</div>
+                <div class="fixed">我的音乐云盘</div>
+                <div class="fixed">我的播客</div>
+                <div class="fixed">我的收藏</div>
+                <div class="active">创建的歌单</div>
+                <div class="active">收藏的歌单</div>
+            </div>
+            <div class="line"></div>
+            <div class="rightpart">
+                <div class="up">
+                    <ul class="up">
+                        <li class="up-in">
+                            个性推荐
+                        </li>
+                        <li class="up-in">专属定制</li>
+                        <li class="up-in">歌单</li>
+                        <li class="up-in">排行榜</li>
+                        <li class="up-in">歌手</li>
+                        <li class="up-in">最新音乐</li>
+                    </ul>
+                </div>
+                <div class="down1">
+                    <div class="slideshow">
+                        <div class="slide-box">
+                            <div class="banner-box"></div>
+                            <button class="slide-left-btn material-icons">arrow_back_ios</button>
+                            <button class="slide-right-btn material-icons">arrow_forward_ios</button>
+                            <div class="pagination-box"></div>
+                        </div>
+                    </div>
+
+                    <div class="songlist">
+                        <div class="songlist-head">推荐歌单
+                            <i class="iconfont-a">&#xe620;</i>
+                        </div>
+                        <div class="songlist-one">
+
+                            <img src="kawayi.png" alt="" class="songlist-one-img" id="blur">
+                            <span class="songlist-one-des">每日歌曲推荐</span>
+                            <div class="hh">
+
+                            </div>
+                            <i class="iconfont-a" id="calendar">&#xe600;</i>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont-a aa">&#xe87c;</i>
+                        </div>
+                        <div class="songlist-one">
+                            <img src="" alt="" class="songlist-one-img">
+                            <span class="songlist-one-des"></span>
+                            <div class="hh">
+                                <i class="iconfont-a">&#xe87c;</i>
+                                <span></span>
+                            </div>
+                            <i class="iconfont aa-a">&#xe87c;</i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="down3">
+                    <div class="excellent">
+                        <div class="excellentbox">
+                            <img src="" alt="" class="excellentsonglist">
+                            <div class="notImg">
+                                <div class="excellentBut">
+                                    <i class="iconfont-a" id="huangguan">&#xe616;</i>
+                                    精品歌单
+                                </div>
+                                <span class="excellentExpression">嘿嘿</span>
+                                <!--.excellentExpression:nth-child(2)-->
+                                <span class="excellentExpression">哈哈</span>
+                                <!--.excellentExpression:nth-child(3)-->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <div class="songAllBtn">
+                            全部歌单
+                            <i class="iconfont-a" style="font-weight: 100;">&#xe620;</i>
+                            <span class="category">华语</span>
+                            <span class="category">流行</span>
+                            <span class="category">摇滚</span>
+                            <span class="category">民谣</span>
+                            <span class="category">电子</span>
+                            <span class="category">另类/独特</span>
+                            <span class="category">轻音乐</span>
+                            <span class="category">综艺</span>
+                            <span class="category">影视原声</span>
+                            <span class="category">ACG</span>
+                        </div>
+
+                    </div>
+                    <div class="songlist-all">
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+
+                        </div>
+                    </div>
+                    <div class="songlist-all">
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="songlist-all">
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="songlist-all">
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="songlist-all">
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="songlist-all">
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="songlist-all">
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                        <img src="" alt="" class="songlist-all-one">
+                        <div class="hh1">
+                            <i class="iconfont-a">&#xe87c;</i>
+                            <span>播放量</span>
+                            <i class="iconfont-a" id="userId">&#xe621;
+                                <span>用户id</span>
+                                <span class="description">描述</span>
+                            </i>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="songlistDetails">
+                    <div class="details">
+                        <img src="" alt="" class="songlistCoverImg">
+                        <div class="detail">
+                            <div class="detail1">
+                                <div class="div">歌单</div>
+                                <div class="title">标题</div>
+                            </div>
+                            <div class="detail2">
+                                <span>用户id</span>
+                                <span>创建时间</span>
+                            </div>
+                            <div class="detail3">
+                                <button>
+                                    <i class="iconfont">&#xe87c;</i>
+                                    播放全部
+                                    <i class="iconfont-c">&#xeaf3;</i>
+                                </button>
+                                <button>
+                                    <i class="iconfont-c">&#xe609;</i>
+                                    收藏
+                                    (<span>收藏量</span>)
+                                </button>
+                                <button>
+                                    <i class="iconfont-c">&#xe6fb;</i>
+                                    分享
+                                    (<span>分享量</span>)
+                                </button>
+                                <button>
+                                    <i class="iconfont-c">&#xe69a;</i>
+                                    下载全部
+                                </button>
+                            </div>
+                            <div class="detail4">标签：
+                                <span>标签</span>
+                            </div>
+                            <div class="detail5">歌曲：
+                                <span>歌单包含歌曲数目</span>
+                                播放：
+                                <span>播放量</span>
+                            </div>
+                            <div class="detail6">简介：
+                                <span>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <ul class="songsNav">
+                        <li>歌曲列表</li>
+                        <li>评论</li>
+                        <li>收藏者</li>
+                        <li style="position: relative;">
+                            <input type="text" placeholder="搜索歌单音乐" class="find">
+                            <i class="iconfont-b" style="position: absolute;right: 5px;top: 5px;">&#xe651;</i>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>操作</li>
+                        <li>标题</li>
+                        <li>歌手</li>
+                        <li>专辑</li>
+                        <li>时间</li>
+                    </ul>
+                    <ul class="music">
+                        <li>操作</li>
+                        <li>标题</li>
+                        <li>歌手</li>
+                        <li>专辑</li>
+                        <li>时间</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="players">
+                <!-- 音乐封面 -->
+                <img src="" alt="" id="songcoverimg" class="music-img">
+                <div class="introduction">
+                    <div id="songname">
+                        <span>歌曲名字</span>
+                        <i class="iconfont love">&#xe8ab;</i>
+                    </div>
+                    <div id="author">作者</div>
+                </div>
+            </div>
+            <div class="players">
+                <div id="player">
+                    <!-- <i class="iconfont" id="order">&#xe636;</i> -->
+                    <!-- <i class="iconfont-h" id="turnLeft">&#xe63c;</i>
+                    <i class="iconfont" id="playOrPause">&#xe87c;</i>
+                    <i class="iconfont-h" id="turnRight">&#xe63e;</i> -->
+
+                    <div class="navigation">
+                        <i class="iconfont" id="order">&#xe636;</i>
+                        <button id="prev" class="action-btn">
+                            <i class="iconfont-h fas fa-backward">&#xe63c;</i>
+                        </button>
+                        <button id="play" class="action-btn action-btn-big">
+                            <i class="iconfont fas fa-play">&#xe87c;</i>
+                        </button>
+                        <button id="next" class="action-btn">
+                            <i class="iconfont-h fas fa-forward">&#xe63e;</i>
+                        </button>
+                        <span style="margin-left: 20px;">词</span>
+                    </div>
+                </div>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress"></div>
+                </div>
+
+                <audio src="" controls></audio>
+                <!-- <div class="startTime"></div> -->
+                <div class="startTime2"></div>
+                
+                <!-- <div class="runningbox">
+                    <div class="start">00:00</div>
+                    <div class="running" onclick="changeProgress()">
+                        <div class="running1">
+                        </div>
+                    </div>
+                    <div class="end">00:00</div>
+                </div> -->
+            </div>
+            <div class="players"></div>
+        </div>
+    </div>
+    <script src="./ss/slideshow.js"></script>
+    <script src="./ss/songlist.js"></script>
+    <script src="./ss/bottom.js"></script>
+</body>
+
+</html>

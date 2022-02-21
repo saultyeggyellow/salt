@@ -1,0 +1,166 @@
+.songlistDetails{
+    height: 535.34px;
+    width: 822px;
+    position: absolute;
+    z-index: 0;
+    top: 60.66px;
+    background-color: white;
+    overflow-y: scroll;
+}
+/*定义滚动条高宽及背景
+高宽分别对应横竖滚动条的尺寸*/
+        
+.songlistDetails::-webkit-scrollbar
+{
+    width:4px;
+    background-color:gray;
+}
+        
+        
+/* 定义滚动条轨道
+内阴影+圆角*/
+.songlistDetails::-webkit-scrollbar-track
+{
+    border-radius:10px;
+    background-color:white;
+}
+/* 定义滑块
+内阴影+圆角*/
+.songlistDetails::-webkit-scrollbar-thumb
+{
+    border-radius:10px;
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
+            
+}
+.details{
+    height: 252px;
+    width: 816px;
+}
+.details::before{
+    content:'';
+    display:table;
+}
+.songs{
+    width: 816px;
+    background-color: coral;
+}
+.songlistCoverImg{
+    width: 185px;
+    height: 185px;
+    margin-top: 30px;
+    margin-left: 30px;
+    float: left;
+}
+
+.detail{
+    margin-left: 220px;
+    margin-top: 30px;
+}
+.div{
+    float: left;
+    border: 1px rgb(236,65,65) solid;
+    color: rgb(236,65,65);
+    border-radius: 5px;
+    padding-left: 6px;
+    width: 40px;
+    margin-right: 10px;
+}
+.detail2{
+    margin-top: 10px;
+    font-size: 5px;
+}
+.detail2>span:nth-child(1){
+    color: rgb(80,125,175);
+}
+.detail3>button:nth-child(1){
+    border-radius: 20px;
+    background-color: rgb(236,65,65);
+    border-width: 0px;
+    width: 140px;
+    height: 35px;
+    padding-bottom: 4px;
+    font-size: 15px;
+    margin-top: 10px;
+    color: aliceblue;
+}
+.detail3>button:nth-child(1):hover{
+    background-color: rgb(204,50,50);
+}
+.detail3>button:nth-child(1)>i:nth-child(2){
+    font-size: 20px;
+}
+.detail3>button:nth-child(2),.detail3>button:nth-child(3),.detail3>button:nth-child(4){
+    border-radius: 20px;
+    border-color: gray;
+    color: rgb(61, 61, 61);
+    border-width: 1px;
+    width: 120px;
+    height: 35px;
+}
+.detail3>button:nth-child(2):hover,.detail3>button:nth-child(3):hover,.detail3>button:nth-child(4):hover{
+    background-color: rgb(204, 202, 202);
+}
+
+.detail4{
+    font-size: 15px;
+    margin-top: 15px;
+}
+.detail4>span{
+    color: rgb(80,125,175);
+    margin-top: 10px;
+}
+.detail5{
+    font-size: 15px;
+    margin-top: 10px;
+}
+.detail6{
+    font-size: 15px;
+    margin-top: 10px;
+    width: 474px;/*/设置盒子宽度 */
+    white-space:nowrap;/*多于内容不换行*/
+    overflow:hidden;/*多余内容隐藏*/
+    text-overflow:ellipsis;/*省略号*/
+    
+}
+ul>li{
+    float: left;
+    list-style: none;
+}
+div.songlistDetails>ul:nth-child(2)>li{
+    margin-left: 20px;
+    
+}
+div.songlistDetails>ul:not(:nth-child(2))>li:nth-child(1){
+    width: 108px;
+    margin-left: 20px;
+}
+div.songlistDetails>ul:not(:nth-child(2))>li:nth-child(2){
+    width: 300px;
+}
+div.songlistDetails>ul:not(:nth-child(2))>li:nth-child(3){
+    width: 142px;
+}
+div.songlistDetails>ul:not(:nth-child(2))>li:nth-child(4){
+    width: 194px;
+}
+div.songlistDetails>ul:not(:nth-child(2))>li:hover{
+    background-color: rgb(240,241,242);
+}
+div.songlistDetails>ul:not(:nth-child(2))>li{
+    height: 33px;
+    line-height: 33px;
+    
+}
+ul.songsNav{
+    height: 46px;
+}
+
+.find{
+    border-radius: 20px;
+    width: 180px;
+    height: 25px;
+    border-width: 0;
+    padding-left: 10px;
+    background-color: rgba(202, 197, 197, 0.671);
+    margin-left: 380px;
+}

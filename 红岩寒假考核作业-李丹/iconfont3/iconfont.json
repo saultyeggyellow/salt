@@ -1,0 +1,37 @@
+{
+  "id": "3193405",
+  "name": "网易云再补",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1546602",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "1621094",
+      "name": "分享",
+      "font_class": "share",
+      "unicode": "e6fb",
+      "unicode_decimal": 59131
+    },
+    {
+      "icon_id": "12627524",
+      "name": "添加收藏夹",
+      "font_class": "icon-xian-",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "5387527",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "eaf3",
+      "unicode_decimal": 60147
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d_wrapper {
+            position: relative;
+            /*设置相对定位*/
+            overflow: hidden;
+            height: 15rem;
+        }
+
+        .d_bg {
+            background: url("https://picsum.photos/414/736?random");
+            /*背景图片*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            /*适应容器*/
+            background-position: 50%;
+            /*调整图片位置*/
+            transform: scale(1.5);
+            /*图片放大*/
+            filter: blur(20px);
+            /*高斯模糊*/
+            height: 15rem;
+            /*设置背景高度*/
+        }
+
+        .d_bg,
+        .d_bg:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .d_bg:before {
+            content: " ";
+            /*伪类必须设置content属性才会生效*/
+            background-color: rgba(0, 0, 0, 0.25);
+            /*设置蒙层，兜底*/
+        }
+    </style>
+</head>
+
+<body>
+    
+        <div>
+            <div class="nav_bar">
+                <v-icon color="white" class="d_icon">fas fa-arrow-left</v-icon>
+                歌单
+            </div>
+            <div class="d_wrapper">
+                <div class="d_head">
+                    <img class="d_img" src="https://picsum.photos/414/736?random" width="120px" height="120px" />
+                    <div class="d_content">
+                        <div class="d_title">css高斯模糊</div>
+                        <div class="d_subtitle">栀子花-</div>
+                        <div class="d_desc">
+                            通过css高斯模糊，结合伪类能够实现网易云歌单ui效果
+                        </div>
+                    </div>
+                </div>
+                <div class="d_bg"></div>
+            </div>
+            <div class="d_body">
+                <div class="d_list">暂无数据！</div>
+            </div>
+        </div>
+    
+    <!-- <script>
+        export default {
+            data() {
+                return {
+                    // 初始距离标题栏高度
+                    originalTop: ''
+                }
+            },
+            methods: {
+                // 监听滚动条改变透明度
+                handleScroll() {
+                    this.$nextTick(() => {
+                        // 根据滚动距离设置透明度
+                        let top = document.querySelector('.d_body').getBoundingClientRect().top
+                        document.querySelector('.d_head').style.opacity = (top - 48) / this.originalTop
+                    })
+                }
+            },
+            mounted() {
+                // 滚动条复位
+                document.documentElement.scrollTop = 0
+                // 获取初始距离标题栏高度（标题栏固定48px）
+                this.originalTop = document.querySelector('.d_body').getBoundingClientRect().top - 48
+                window.addEventListener('scroll', this.handleScroll, true)
+            },
+            beforeDestroy() {
+                window.removeEventListener('scroll', this.handleScroll, true)
+            }
+        }
+    </script> -->
+</body>
+
+</html>
