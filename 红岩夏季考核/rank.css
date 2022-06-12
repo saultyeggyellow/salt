@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.rank>div>img{
+    float: right;
+    width: 110px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.rank>div>div{
+    float: left;
+    width: 270px;
+}    
+.rank>div{
+    width: 395px;
+    height: 124px;
+    margin-bottom: 24px;
+    background-color: white;
+}
+
+.rank{
+    background-color: rgb(250,250,250);
+    width: 395px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
